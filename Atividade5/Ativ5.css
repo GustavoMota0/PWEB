@@ -1,0 +1,95 @@
+div {
+    text-align: center;
+    width: 500px;
+    height: 500px;
+}
+
+.texto {
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+
+@media screen and (max-width: 420px) {
+
+	div {
+		width: auto;
+		background-color: gray;
+	}
+
+    .texto::after {
+        content: "Cinza";
+      }
+}
+
+@media screen and (min-width: 421px) and (max-width: 768px) {
+
+	div {
+		width: auto;
+		background-color: orange;
+	}
+
+    .texto::after {
+        content: "Laranja";
+      }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+	div {
+		width: auto;
+		background-color: pink;
+	}
+
+    .texto::after {
+        content: "Rosa";
+      }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1080px) {
+
+	div {
+		width: auto;
+		background-color: red;
+	}
+
+    .texto::after {
+        content: "Vermelho";
+      }
+}
+
+@media screen and (min-width: 1081px) and (max-width: 1366px) {
+
+	div {
+		width: auto;
+		background-color: blue;
+	}
+
+    .texto::after {
+        content: "Azul";
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px) {
+
+	div {
+		width: auto;
+		background-color: yellow;
+	}
+
+    .texto::after {
+        content: "Amarelo";
+    }
+}
+
+@media screen and (min-width: 1921px) {
+
+	div {
+		width: auto;
+		background-color: green;
+	}
+
+    .texto::after {
+        content: "Verde";
+    }
+}
