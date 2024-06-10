@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas Kanban</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gerenciador de Tarefas Kanban</h1>
+        <!--<input type="text" placeholder="Pesquisar..." id="search-input">-->
+
+    </header>
+
+    <main>
+        <div class="kanban-board">
+            <div class="kanban-header">
+                <button id="add-task-btn">Adicionar Tarefa</button>
+            </div>
+            <div class="kanban-colums">
+                <div class="column" id="todo-column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="column-header" id="todo-header">
+                        <h2>Pendentes</h2>
+                    </div>
+                    <div class="task-area"></div>
+                </div>
+                <div class="column" id="inprogress-column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="column-header" id="inprogress-header">
+                        <h2>Em Andamento</h2>
+                    </div>
+                    <div class="task-area"></div>
+                </div>
+                <div class="column" id="done-column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="column-header" id="done-header">
+                        <h2>Concluídas</h2>
+                    </div>
+                    <div class="task-area"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="task-modal">
+        <div class="modal-content">
+            <div class="form-header">
+                <h2>Criar/Editar Tarefa</h2>
+                <span class="close-modal">×</span>
+            </div>
+            <div class="form-content">
+                <form id="task-form">
+                    <input type="hidden" id="task-id">
+                    <div class="form-line">
+                        <label for="task-title">Título:</label>
+                        <input type="text" id="task-title" name="title" required>
+                    </div>
+                    <div class="form-line">
+                        <label for="task-description">Descrição:</label>
+                        <textarea id="task-description" name="description"></textarea>
+                    </div>
+                    <div class="form-line">
+                        <label for="task-priority">Prioridade:</label>
+                        <select id="task-priority" name="priority">
+                            <option value="baixa">Baixa</option>
+                            <option value="media">Média</option>
+                            <option value="alta">Alta</option>
+                            <option value="urgente">Urgente</option>
+                        </select>
+                        <label for="task-deadline">Data de Vencimento:</label>
+                        <input type="date" id="task-deadline" name="deadline">
+                        <label for="task-assigned">Responsável:</label>
+                        <input type="text" id="task-assigned" name="assigned">
+                    </div>
+                    <div class="form-line">
+                        <button type="submit">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
