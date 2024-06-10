@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Professores da Fatec Sorocaba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="http://localhost:3000/" style="text-decoration: none; color: black">Professores da Fatec Sorocaba</a></h1>
+  </header>
+
+  <main>
+    <section class="professores">
+      <h2>Lista de Professores</h2>
+      <ul>
+        <% for (const professor of profs) { %>
+          <li>
+            <a href="/informacao/detalha_professor"><%= professor.nome_professor %></a>
+          </li>
+        <% } %>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Fatec Sorocaba</p>
+  </footer>
+</body>
+</html>
